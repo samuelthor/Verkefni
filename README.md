@@ -1,0 +1,2 @@
+# Verkefni
+Fyrsta verkefni.
