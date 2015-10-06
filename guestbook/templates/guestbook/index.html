@@ -1,0 +1,26 @@
+<form action="/guestbook/" method="post" id="form">
+  {% csrf_token %}
+  <fieldset>
+    <legend>Skrifaðu færslu</legend>
+    Færsla<br>
+    <textarea name="færsla"></textarea><br><br>
+    Nafn<br>
+    <input type="text" name="nafn">
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+<br>
+<br>
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for text in latest_question_list %}
+        <li><a href="{% url 'guestbook:detail' text.id %}">{{ text.title_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No text are available.</p>
+{% endif %}

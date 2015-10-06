@@ -1,0 +1,10 @@
+<title>{{question.title_text}}</title>
+
+<h1>{{question.title_text}}</h1>
+
+<p>{{ question.question_text }}</p>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
